@@ -1,0 +1,34 @@
+body {
+  background-color: #9DC8C8;
+}
+.total {
+  display: flex;
+}
+.left {
+  border: 2px solid #519D9E;
+  width: 35%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 2rem;
+  background-color: white;
+}
+.right {
+  border: 2px solid #519D9E;
+  width: 35%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 2rem;
+  background-color: white;
+}
+.mylist_1 {
+  border-top: 2px solid #519D9E;
+}
+.mylist_2 {
+  border-bottom: 1px solid #519D9E;
+}
+.mylist_comment {
+  border-top: 2px solid #519D9E;
+}
+.mylist_comment h3 {
+  color: blue;
+}

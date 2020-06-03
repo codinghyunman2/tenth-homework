@@ -1,0 +1,35 @@
+body {
+  background-color: #9DC8C8;
+}
+.top {
+  display: block;
+  border: 5px solid #519D9E;
+  width: 50%;
+  margin: 0px auto;
+  text-align: center;
+  background-color: white;
+}
+.top h1 {
+  font-size: 3rem;
+}
+.top p {
+  color: red;
+  font-weight: bold;
+}
+.middle {
+  display: block;
+  border: 1px solid #519D9E;
+  width: 25%;
+  margin: 0px auto;
+  line-height: 1.5rem;
+  text-align: center;
+  background-color: white;
+}
+.bottom {
+  width: 9%;
+  text-align: center;
+  border: 3px solid #519D9E;
+  background-color: white;
+  margin: 0px auto;
+  font-weight: bold;
+}

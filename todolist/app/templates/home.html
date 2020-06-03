@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block title %}
+    <title>home</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+  {% endblock title %}
+  
+</head>
+<body>
+  {% block content %}
+  <div class="top">
+    <h1>to-do-list</h1>
+    <p>마감기한이 이른 순으로 정렬합니다.</p>
+  </div>
+  <br>
+  {% for post in posts %}
+    {% if user.is_authenticated and post.author.pk == user.pk %}
+    <div class="middle">
+      <h3>{{ post.deadline }}</h3>
+      <a href="{% url 'detail' post.pk %}">{{ post.title }}</a>
+    </div> 
+    {% endif %}
+  {% endfor %}
+  <br>
+  <div class="bottom">
+    <a href="{% url 'new' %}">->일정 추가하기</a>
+  </div>
+  {% endblock content %}
+</body>
+</html>

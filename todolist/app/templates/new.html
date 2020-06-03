@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block title %}
+    <title>new</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'new.css' %}">
+  {% endblock title %}
+</head>
+<body>
+  {% block content %}
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="total">
+      <div class="top">
+        <h1>add-to-list</h1>
+      </div>
+      <br>
+      <div class="title">
+        <input type="text" name="title" placeholder="제목을 입력해주세요">
+      </div>
+      <br>
+      <div class="content">
+        <input type="text" name="content" placeholder="내용을 입력해주세요">
+      </div>
+      <div class="image">
+        <input type="file" name="img">
+      </div>
+      <br>
+      <div class="deadline">
+        <input type="date" name="deadline" placeholder="날짜를 입력해주세요">
+      </div>
+      <br>
+      <div class="add">
+        <button type="submit">추가하기</button>
+      </div>
+    </div>
+  </form>
+  {% endblock content %}
+</body>
+</html>

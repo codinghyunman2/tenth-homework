@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block title %}
+    <title>edit</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'edit_comment.css' %}">
+  {% endblock title %}
+</head>
+<body>
+  {% block content %}
+  <form method="POST">
+    {% csrf_token %}
+    <div class="top">
+      <h1>update-the-comment</h1>
+    </div>
+    <div class="content">
+      <textarea name="content" cols="30" rows="10">{{ comment.content }}</textarea>
+    </div>
+    <br>
+    <div class="button">
+      <button type="submit">수정하기</button>
+    </div>
+  </form>
+  {% endblock content %}
+</body>
+</html>

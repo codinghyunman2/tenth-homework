@@ -1,0 +1,43 @@
+body {
+  background-color: #9DC8C8;
+}
+.top {
+  display: block;
+  border: 5px solid #519D9E;
+  width: 50%;
+  margin: 0px auto;
+  text-align: center;
+  background-color: white;
+  margin-top: 2rem;
+}
+.total {
+  text-align: center;
+  padding-top: 1rem;
+}
+.title input {
+  text-align: center;
+  width: 20%;
+  height: 3rem;
+  border: 2px solid #519D9E;
+  font-size: 1.5rem;
+}
+.content textarea {
+  width: 30rem;
+  height: 15rem;
+  font-size: 1.2rem;
+  border: 2px solid #519D9E;
+}
+.deadline input {
+  border: 2px solid #519D9E;
+  height: 2rem;
+  font-size: 1.2rem;
+}
+.button {
+  text-align: center;
+}
+.button button {
+  border: 2px solid #519D9E;
+  width: 5rem;
+  height: 1.5rem;
+  font-size: 1rem;
+}

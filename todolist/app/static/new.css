@@ -1,0 +1,37 @@
+body {
+  text-align: center;
+  background-color: #9DC8C8;
+}
+.top {
+  display: block;
+  border: 5px solid #519D9E;
+  width: 50%;
+  margin: 0px auto;
+  text-align: center;
+  background-color: white;
+}
+.title input {
+  width: 15rem;
+  height: 3rem;
+  text-align: center;
+  border: 2px solid #519D9E;
+}
+.content input {
+  width: 25rem;
+  height: 10rem;
+  text-align: center;
+  border: 2px solid #519D9E;
+}
+.deadline input {
+  width: 10rem;
+  height: 3rem;
+  text-align: center;
+  border: 2px solid #519D9E;
+  font-size: 1.2rem;
+}
+.add button {
+  border: 2px solid #519D9E;
+  width: 5rem;
+  height: 3rem;
+  font-size: 1rem;
+}

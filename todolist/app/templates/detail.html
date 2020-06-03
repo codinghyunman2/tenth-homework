@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block title %}
+    <title>detail</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}">
+  {% endblock title %}
+</head>
+<body>
+  {% block content %}
+  <div class="title">
+    <h1>detail of the assignment</h1>
+  </div>
+  <div class="center">
+    <div class="top">
+      <h3>해야할 일</h3>
+      <span>{{ post.title }}</span>
+    </div>
+    <div class="middle">
+      <h3>세부 사항</h3>
+      <span>{{ post.content }}</span>
+    </div>
+    <div class="bottom">
+      <h3>마감 기한</h3>
+      <span>{{ post.deadline }}</span>
+    </div>
+  </div>
+  <div class="comment">
+    {% if user.is_authenticated %}
+    <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="content" placeholder="댓글을 입력해주세요">
+      <button type="submit">댓글 쓰기</button>
+    </form>
+    {% endif %}
+    <br>
+    {% for comment in post.comments.all %}
+      <li>{{ comment.content }}</li>
+      {% if user.is_authenticated and comment.author.pk == user.pk %}
+      <a href="{% url 'delete_comment' post.pk comment.pk %}">댓글삭제</a>   
+      <a href="{% url 'edit_comment' post.pk comment.pk %}">댓글수정</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="button">
+    <div class="update">
+      {% if user.is_authenticated and post.author.pk == user.pk %}
+      <a href="{% url 'edit' post.pk %}">수정하기</a>
+    </div>
+    <br>
+    <div class="delete">
+      <a href="{% url 'delete' post.pk %}">삭제하기</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="image">
+    <img src="{{ post.img }}" alt="{{ post.title }}" width="300px" height="200px">
+  </div>
+ 
+  {% endblock %}
+</body>
+</html>
